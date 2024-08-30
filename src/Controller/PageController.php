@@ -28,22 +28,23 @@ class PageController extends AbstractController
     )]
     public function page(int $id = 1): Response
     {
-        return $this->render('page/page.html.twig', [
+        return $this->render('page/page1                .html.twig', [
             'message' => 'page ' . $id,
         ]);
     }
 
-
     #[Route(
-        path: '/page/{slug}',
-        name: 'page_invalid',
-        requirements: ['slug' => '\D+'],
+        path: '/page/haha',
+        name: 'haha',
         methods: ['GET']
     )]
-    public function invalidPage(string $slug): Response
+    public function haha(string $slug): Response
     {
-        throw $this->createNotFoundException('Page not found!');
+        throw $this->createNotFoundException('ERROR');
     }
+
+
+
 
 
     #[Route(
