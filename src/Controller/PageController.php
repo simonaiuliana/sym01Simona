@@ -17,8 +17,6 @@ class PageController extends AbstractController
             'message' => 'Bienvenue',
         ]);
     }
-
-
     #[Route(
         path: '/page/{id}',
         name: 'page',
@@ -32,7 +30,6 @@ class PageController extends AbstractController
             'message' => 'Page ' . $id,
         ]);
     }
-
     #[Route(
         path: '/page/haha',
         name: 'haha',
@@ -44,9 +41,6 @@ class PageController extends AbstractController
     }
 
 
-
-
-
     #[Route(
         path: '/contact',
         name: 'contact',
@@ -56,12 +50,11 @@ class PageController extends AbstractController
     {
         if ($request->isMethod('POST')) {
 
-            $data = $request->request->all(); // Example of form data retrieval
+            $data = $request->request->all();
 
-            return $this->redirectToRoute('homepage'); // Redirect after processing
+            return $this->redirectToRoute('homepage'); 
         }
 
-       
         return $this->render('page/contact.html.twig', [
             'message' => 'Me contacter',
         ]);
