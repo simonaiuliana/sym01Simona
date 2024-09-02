@@ -13,7 +13,7 @@ class PageController extends AbstractController
     #[Route('/', name: 'homepage')]
     public function index(): Response
     {
-        return $this->render('page/index.html.twig', [
+        return $this->render('page/homepage.html.twig', [
             'message' => 'Bienvenue',
         ]);
     }
@@ -28,8 +28,8 @@ class PageController extends AbstractController
     )]
     public function page(int $id = 1): Response
     {
-        return $this->render('page/page1                .html.twig', [
-            'message' => 'page ' . $id,
+        return $this->render('page/page1.html.twig', [
+            'message' => 'Page ' . $id,
         ]);
     }
 
@@ -38,7 +38,7 @@ class PageController extends AbstractController
         name: 'haha',
         methods: ['GET']
     )]
-    public function haha(string $slug): Response
+    public function haha(): Response
     {
         throw $this->createNotFoundException('ERROR');
     }

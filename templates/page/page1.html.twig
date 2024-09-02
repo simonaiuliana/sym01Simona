@@ -1,4 +1,8 @@
-{% extends 'page/homepage.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ message }}
+{% endblock %}
 
 {% block body %}
     <h1>{{ message }}</h1>
