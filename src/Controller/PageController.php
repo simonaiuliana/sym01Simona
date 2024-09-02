@@ -30,14 +30,13 @@ class PageController extends AbstractController
             'message' => 'Page ' . $id,
         ]);
     }
-    #[Route(
-        path: '/page/haha',
-        name: 'haha',
-        methods: ['GET']
-    )]
-    public function haha(): Response
+
+    #[Route('/page/{code}', name: 'error')]
+    public function show($code): Response
     {
-        throw $this->createNotFoundException('ERROR');
+        return $this->render('page/haha.html.twig', [
+            'code' => $code,
+        ]);
     }
 
 
@@ -52,7 +51,7 @@ class PageController extends AbstractController
 
             $data = $request->request->all();
 
-            return $this->redirectToRoute('homepage'); 
+            return $this->redirectToRoute('homepage');
         }
 
         return $this->render('page/contact.html.twig', [
